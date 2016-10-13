@@ -12,7 +12,7 @@ namespace RepoQuiz.DAL
         // This class should be used to generate random names and Majors for Students.
         // This is NOT your Repository
         // All methods should be Unit Tested :)
-        public string NameGenerate()
+        public Student GenerateRamdomStudentCombination()
         {
             StudentRepository repo = new StudentRepository();
 
@@ -38,14 +38,11 @@ namespace RepoQuiz.DAL
             int majorCount = repo.MajorPickList().Count();
             int majorNumber = rdn.Next(majorCount);
             MajorPick[] arr3 = repo.MajorPickList().ToArray();
-            string generatedmajor = arr3[majorNumber].MajorName;
+            string generatedMajor = arr3[majorNumber].MajorName;
 
+            Student record = new Student { FirstName = generatedFirstName, LastName = generatedLastName, Major = generatedMajor };
             
-            
-
-
-
-            return generatedFirstName;
+            return record;
         }
         
     }

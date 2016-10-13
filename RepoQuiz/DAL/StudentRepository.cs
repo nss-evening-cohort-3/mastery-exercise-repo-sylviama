@@ -40,5 +40,42 @@ namespace RepoQuiz.DAL
             return Context.Students.ToList();
         }
 
+        public bool TestIfDuplicate(Student newStudent)
+        {
+            int counter = 0;
+
+            var list = GetAllStudents();
+            foreach (var item in list)
+            {
+                if (item.FirstName + item.LastName == newStudent.FirstName + newStudent.LastName)
+                {
+                    counter++;
+                }
+            }
+
+            if (counter == 0)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
+
+        public Student SaveStudentToDb()
+        {
+            NameGenerator record = new NameGenerator();
+            var newStudent = record.GenerateRamdomStudentCombination();
+            if(TestIfDuplicate(newStudent)==true)
+            {
+                Context.Students.Add(newStudent);
+                Context.SaveChanges();
+                return newStudent;
+            }else
+            {
+                Student student = new Student();
+                return student;
+            } 
+        }
     }
 }

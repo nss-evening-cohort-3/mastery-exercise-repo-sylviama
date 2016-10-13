@@ -12,8 +12,9 @@ namespace RepoQuiz.Controllers
     {
         public ActionResult Index()
         {
-            NameGenerator record = new NameGenerator();
-            ViewBag.count = record.NameGenerate();
+            StudentRepository repo = new StudentRepository();
+            Student newStudent= repo.SaveStudentToDb();
+            ViewBag.newStudent = newStudent;
             return View();
         }
 
