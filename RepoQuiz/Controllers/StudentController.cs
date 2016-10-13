@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RepoQuiz.DAL;
+using RepoQuiz.Models;
 
 namespace RepoQuiz.Controllers
 {
@@ -11,6 +13,7 @@ namespace RepoQuiz.Controllers
         // GET: Student
         public ActionResult Index()
         {
+            
             return View();
         }
 

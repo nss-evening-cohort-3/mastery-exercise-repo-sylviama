@@ -6,14 +6,11 @@ using System.Web;
 
 namespace RepoQuiz.Models
 {
-    public class Student
+    public class LastNamePick
     {
         [Key]
-        public int StudentID { get; set; }
-        [Required]
-        public string FirstName { get; set; }
+        public int LastNameId { get; set; }
         [Required]
         public string LastName { get; set; }
-        public string Major { get; set; }
     }
 }

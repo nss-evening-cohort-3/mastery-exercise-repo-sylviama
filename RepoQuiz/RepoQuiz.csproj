@@ -132,9 +132,18 @@
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="DAL\NameGenerator.cs" />
     <Compile Include="DAL\StudentContext.cs" />
+    <Compile Include="DAL\StudentRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610131747222_InitialCreate.cs" />
+    <Compile Include="Migrations\201610131747222_InitialCreate.Designer.cs">
+      <DependentUpon>201610131747222_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\FirstNamePick.cs" />
+    <Compile Include="Models\LastNamePick.cs" />
+    <Compile Include="Models\MajorPick.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -159,7 +168,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -185,6 +196,11 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610131747222_InitialCreate.resx">
+      <DependentUpon>201610131747222_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
