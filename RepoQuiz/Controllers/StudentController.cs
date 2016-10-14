@@ -13,7 +13,8 @@ namespace RepoQuiz.Controllers
         // GET: Student
         public ActionResult Index()
         {
-            
+            StudentRepository repo = new StudentRepository();
+            ViewBag.studentList = repo.GetAllStudents();
             return View();
         }
 

@@ -15,6 +15,8 @@ namespace RepoQuiz.DAL
             Context = new StudentContext();
         }
 
+
+        //return four database tables
         public StudentRepository(StudentContext studentContext)
         {
             Context = studentContext;
@@ -40,6 +42,8 @@ namespace RepoQuiz.DAL
             return Context.Students.ToList();
         }
 
+
+        //test if record is duplicate
         public bool TestIfDuplicate(Student newStudent)
         {
             int counter = 0;
@@ -62,6 +66,7 @@ namespace RepoQuiz.DAL
             }
         }
 
+        //save to database if not duplicate
         public Student SaveStudentToDb()
         {
             NameGenerator record = new NameGenerator();

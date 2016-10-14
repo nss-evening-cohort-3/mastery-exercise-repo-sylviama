@@ -12,9 +12,9 @@ namespace RepoQuiz.Controllers
     {
         public ActionResult Index()
         {
-            StudentRepository repo = new StudentRepository();
-            Student newStudent= repo.SaveStudentToDb();
-            ViewBag.newStudent = newStudent;
+            //StudentRepository repo = new StudentRepository();
+            //Student newStudent= repo.SaveStudentToDb();
+            //ViewBag.newStudent = newStudent;
             return View();
         }
 

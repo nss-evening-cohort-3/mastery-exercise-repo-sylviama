@@ -12,6 +12,9 @@ namespace RepoQuiz.DAL
         // This class should be used to generate random names and Majors for Students.
         // This is NOT your Repository
         // All methods should be Unit Tested :)
+
+
+
         public Student GenerateRamdomStudentCombination()
         {
             StudentRepository repo = new StudentRepository();
