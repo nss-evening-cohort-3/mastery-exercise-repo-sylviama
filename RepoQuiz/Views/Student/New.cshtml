@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Generated New Student:</h2>
+
+<div>
+    @if (ViewBag.generatedNewStudent.FirstName != null)
+    {
+        <div class="container">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Major</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@ViewBag.generatedNewStudent.FirstName</td>
+                        <td>@ViewBag.generatedNewStudent.LastName</td>
+                        <td>@ViewBag.generatedNewStudent.Major</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    
+    }else
+    {
+        <p>Student Already Exist. Generate Again!</p>
+    }
+</div>
+
+<br /><br />
+<a href="/Student/Index">Go Back to Student List</a>
+

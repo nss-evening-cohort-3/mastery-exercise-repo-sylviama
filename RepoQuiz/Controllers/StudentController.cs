@@ -26,5 +26,11 @@ namespace RepoQuiz.Controllers
             return View();
         }
 
+        public ActionResult New()
+        {
+            ViewBag.generatedNewStudent = repo.SaveStudentToDb();
+            return View();
+        }
+
     }
 }
