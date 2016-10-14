@@ -42,6 +42,13 @@ namespace RepoQuiz.DAL
             return Context.Students.ToList();
         }
 
+        public Student ReturnOneStudent(int id)
+        {
+            var student = Context.Students.FirstOrDefault(s => s.StudentID == id);
+            return student;
+
+        }
+
 
         //test if record is duplicate
         public bool TestIfDuplicate(Student newStudent)

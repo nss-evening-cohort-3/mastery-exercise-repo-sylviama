@@ -10,10 +10,11 @@ namespace RepoQuiz.Controllers
 {
     public class StudentController : Controller
     {
+        StudentRepository repo = new StudentRepository();
+
         // GET: Student
         public ActionResult Index()
         {
-            StudentRepository repo = new StudentRepository();
             ViewBag.studentList = repo.GetAllStudents();
             return View();
         }
@@ -21,6 +22,7 @@ namespace RepoQuiz.Controllers
         // GET: Student/Details/5
         public ActionResult Details(int id)
         {
+            ViewBag.oneStudent = repo.ReturnOneStudent(id);
             return View();
         }
 
