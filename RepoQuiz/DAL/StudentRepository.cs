@@ -15,13 +15,14 @@ namespace RepoQuiz.DAL
             Context = new StudentContext();
         }
 
-
-        //return four database tables
+        
         public StudentRepository(StudentContext studentContext)
         {
             Context = studentContext;
         }
 
+
+        //return four database tables
         public List<FirstNamePick> FirstNamePickList()
         {
             return Context.firstNamePick.ToList();
@@ -46,7 +47,14 @@ namespace RepoQuiz.DAL
         {
             var student = Context.Students.FirstOrDefault(s => s.StudentID == id);
             return student;
+        }
 
+        //delete a record
+        public void RemoveAStudent(int id)
+        {
+            var student= Context.Students.FirstOrDefault(s => s.StudentID == id);
+            Context.Students.Remove(student);
+            Context.SaveChanges();
         }
 
 
@@ -85,7 +93,7 @@ namespace RepoQuiz.DAL
                 return newStudent;
             }else
             {
-                Student student = new Student();
+                Student student = new Student() { FirstName=""};
                 return student;
             } 
         }

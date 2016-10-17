@@ -32,5 +32,11 @@ namespace RepoQuiz.Controllers
             return View();
         }
 
+        public ActionResult Delete(int id)
+        {
+            repo.RemoveAStudent(id);
+            return View();
+        }
+
     }
 }
