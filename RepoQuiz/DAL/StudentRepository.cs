@@ -8,7 +8,7 @@ namespace RepoQuiz.DAL
 {
     public class StudentRepository
     {
-        StudentContext Context { get; set; }
+        public StudentContext Context { get; set; }
 
         public StudentRepository()
         {

@@ -100,8 +100,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\StudentRepositoryTests.cs" />
     <Compile Include="DAL\NameGeneratorTests.cs" />
+    <Compile Include="DAL\StudentRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
   </ItemGroup>
