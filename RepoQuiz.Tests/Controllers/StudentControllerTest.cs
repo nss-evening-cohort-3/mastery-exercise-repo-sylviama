@@ -116,7 +116,7 @@ namespace RepoQuiz.Tests.Controllers
             repo.Context.Students.Add(student2);
 
             StudentController controller = new StudentController(mock_repo.Object);
-            ViewResult result = controller.Details(0) as ViewResult;
+            ViewResult result = controller.Details(1) as ViewResult;
             var actual_detail = result.ViewBag.oneStudent;
             Assert.AreEqual(actual_detail.FirstName, student1.FirstName);
         }
