@@ -23,34 +23,34 @@ namespace RepoQuiz.DAL
 
 
         //return four database tables
-        public List<FirstNamePick> FirstNamePickList()
+        public virtual List<FirstNamePick> FirstNamePickList()
         {
             return Context.firstNamePick.ToList();
         }
 
-        public List<LastNamePick> LastNamePickList()
+        public virtual List<LastNamePick> LastNamePickList()
         {
             return Context.lastNamePick.ToList();
         }
 
-        public List<MajorPick> MajorPickList()
+        public virtual List<MajorPick> MajorPickList()
         {
             return Context.majorPick.ToList();
         }
 
-        public List<Student> GetAllStudents()
+        public virtual List<Student> GetAllStudents()
         {
             return Context.Students.ToList();
         }
 
-        public Student ReturnOneStudent(int id)
+        public virtual Student ReturnOneStudent(int id)
         {
             var student = Context.Students.FirstOrDefault(s => s.StudentID == id);
             return student;
         }
 
         //delete a record
-        public void RemoveAStudent(int id)
+        public virtual void RemoveAStudent(int id)
         {
             var student= Context.Students.FirstOrDefault(s => s.StudentID == id);
             Context.Students.Remove(student);
@@ -59,7 +59,7 @@ namespace RepoQuiz.DAL
 
 
         //test if record is duplicate
-        public bool TestIfDuplicate(Student newStudent)
+        public virtual bool TestIfDuplicate(Student newStudent)
         {
             int counter = 0;
 
@@ -82,7 +82,7 @@ namespace RepoQuiz.DAL
         }
 
         //save to database if not duplicate
-        public Student SaveStudentToDb()
+        public virtual Student SaveStudentToDb()
         {
             NameGenerator record = new NameGenerator();
             var newStudent = record.GenerateRamdomStudentCombination();

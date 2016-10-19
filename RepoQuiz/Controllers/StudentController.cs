@@ -10,7 +10,17 @@ namespace RepoQuiz.Controllers
 {
     public class StudentController : Controller
     {
-        StudentRepository repo = new StudentRepository();
+        public StudentRepository repo { get; set; }
+
+        public StudentController()
+        {
+            repo= new StudentRepository();
+        }
+
+        public StudentController(StudentRepository repo1)
+        {
+            repo = repo1;
+        }
 
         // GET: Student
         public ActionResult Index()
